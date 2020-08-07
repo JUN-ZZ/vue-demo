@@ -60,7 +60,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    meta: { title: '项目一', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'table',
@@ -73,6 +73,34 @@ export const constantRoutes = [
         name: 'Tree',
         component: () => import('@/views/tree/index'),
         meta: { title: 'Tree', icon: 'tree' }
+      }
+    ]
+  },
+
+  {
+    path: '/admin',
+    component: Layout,
+    redirect: '/admin/auth',
+    name: 'Auth',
+    meta: { title: '权限管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'user',
+        name: 'User',
+        component: () => import('@/views/auth/user/index'),
+        meta: { title: '用户', icon: 'table' }
+      },
+      {
+        path: 'role',
+        name: 'Role',
+        component: () => import('@/views/auth/role/index'),
+        meta: { title: '角色', icon: 'tree' }
+      },
+      {
+        path: 'auth',
+        name: 'auth_profile',
+        component: () => import('@/views/auth/authProfile/index'),
+        meta: { title: '权限配置', icon: 'tree' }
       }
     ]
   },
@@ -145,17 +173,6 @@ export const constantRoutes = [
         component: () => import('@/views/nested/menu2/index'),
         name: 'Menu2',
         meta: { title: 'menu2' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
       }
     ]
   },

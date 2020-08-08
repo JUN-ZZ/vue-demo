@@ -1,8 +1,10 @@
 <template>
     <div>
-      用户列表：<br>
+      <h2>用户列表</h2>
+      <br>
       <el-table
         :data="userData"
+        border
         style="width: 100%">
         <el-table-column
           prop="full_name"
@@ -22,6 +24,16 @@
         <el-table-column
           prop="email"
           label="邮箱">
+        </el-table-column>
+        <el-table-column label="操作">
+          <el-button
+            size="medium" type="text"
+            @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+          <el-button
+            size="medium"
+            type="text" style="color: #ea3e3e"
+            @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+
         </el-table-column>
       </el-table>
       <br>
@@ -67,6 +79,12 @@ export default {
             // console.log(data.limit)
             this.params.page_num = data.currentPage
             await this.getUserList(this.params)
+        },
+        handleEdit(){
+
+        },
+        handleDelete(){
+
         }
 
   }

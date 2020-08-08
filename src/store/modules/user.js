@@ -52,11 +52,11 @@ const actions = {
         if (!data) {
           return reject('Verification failed, please Login again.')
         }
+        // console.log(data)
+        // const { name, avatar } = data
 
-        const { name, avatar } = data
-
-        commit('SET_NAME', name)
-        commit('SET_AVATAR', avatar)
+        commit('SET_NAME', data.full_name)
+        // commit('SET_AVATAR', avatar)
         resolve(data)
       }).catch(error => {
         reject(error)

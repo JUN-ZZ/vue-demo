@@ -24,6 +24,7 @@
           label="邮箱">
         </el-table-column>
       </el-table>
+      <br>
       <pagination :total="total" :pageSize="params.limit" :currentPage="params.page_num" @pagination="paginationChange"></pagination>
     </div>
 

@@ -42,7 +42,6 @@ export default {
     handleSizeChange(val) {
       this.pageSize = val
       this.$emit('pagination', {currentPage:this.currentPage,limit:this.pageSize})
-      console.log(`每页 ${val} 条`);
     },
     handleCurrentChange(val) {
       this.currentPage = val

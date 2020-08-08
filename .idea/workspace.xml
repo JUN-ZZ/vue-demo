@@ -4,6 +4,7 @@
     <list default="true" id="d4e25a39-ff4f-423a-8b9b-25cba51ba4cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Pagination/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/auth/user/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/auth/user/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596780981590</updated>
       <workItem from="1596780982729" duration="17246000" />
-      <workItem from="1596862552935" duration="12757000" />
+      <workItem from="1596862552935" duration="14203000" />
     </task>
     <task id="LOCAL-00001" summary="权限管理">
       <created>1596793265605</created>
@@ -68,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596874168173</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="分页组件">
+      <created>1596878511327</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1596878511327</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,18 +89,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="分页组件" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="315" y="47" width="1100" height="944" key="CommitChangelistDialog2" timestamp="1596874168096">
+    <state x="315" y="47" width="1100" height="944" key="CommitChangelistDialog2" timestamp="1596878511288">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="315" y="47" width="1100" height="944" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1596874168096" />
+    <state x="315" y="47" width="1100" height="944" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1596878511288" />
     <state x="475" y="187" key="SettingsEditor" timestamp="1596869334432">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="475" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1596869334432" />
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1596875134238">
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1596878515583">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1596875134238" />
+    <state x="588" y="287" width="800" height="531" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1596878515583" />
     <state x="685" y="238" width="615" height="628" key="find.popup" timestamp="1596858304058">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

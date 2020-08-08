@@ -5,7 +5,7 @@
       @current-change="handleCurrentChange"
       :current-page="currentPage"
       :page-sizes="pageSizes"
-      :page-size="total"
+      :page-size="pageSize"
       layout="total, sizes, prev, pager, next, jumper"
       :total="total">
     </el-pagination>
@@ -23,29 +23,32 @@ export default {
       default: 0
     },
     pageSizes:{
-      default: [10, 20, 30, 40]
+      default: [1, 20, 30, 40]
     },
-    pageSize:{
+    pageSize: {
       default: 10
+    },
+    currentPage: {
+      default: 1
     }
 
   },
   data(){
     return {
-      currentPage:1,
-      limit:10
+
     }
   },
   methods: {
     handleSizeChange(val) {
-      this.limit = val
-      this.$emit('pagination', {page:this.currentPage,limit:this.limit})
+      this.pageSize = val
+      this.$emit('pagination', {currentPage:this.currentPage,limit:this.pageSize})
       console.log(`每页 ${val} 条`);
     },
     handleCurrentChange(val) {
       this.currentPage = val
-      this.$emit('pagination',{page:this.currentPage,limit:this.limit})
+      this.$emit('pagination',{currentPage:this.currentPage,limit:this.pageSize})
       console.log(`当前页: ${val}`);
+      console.log(`pageSize: ${this.pageSize}`);
     }
   },
 

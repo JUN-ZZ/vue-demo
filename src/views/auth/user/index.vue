@@ -1,56 +1,66 @@
 <template>
     <div>
       <el-table
-        :data="tableData"
+        :data="userData"
         style="width: 100%">
         <el-table-column
-          prop="date"
-          label="日期"
-          width="180">
-        </el-table-column>
-        <el-table-column
-          prop="name"
+          prop="full_name"
           label="姓名"
           width="180">
         </el-table-column>
         <el-table-column
-          prop="address"
-          label="地址">
+          prop="username"
+          label="name"
+          width="180">
+        </el-table-column>
+        <el-table-column
+          prop="phone"
+          label="电话"
+          width="180">
+        </el-table-column>
+        <el-table-column
+          prop="email"
+          label="邮箱">
         </el-table-column>
       </el-table>
+      <pagination></pagination>
     </div>
 
 </template>
 
 <script>
-  export default {
-      name: "index",
+
+import {getUserList} from "@/api/user"
+import pagination from '@/components/Pagination/index'
+
+export default {
+    name: "index",
+    components: { pagination },
     data() {
         return {
-          username: 'admin',
-          password: 'ppp',
-          tableData: [{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }]
+          userData: []
         }
-    }
+    },
+    created() {
+        this.getUserList()
+    },
+    methods:{
 
+       getUserList(){
+          getUserList().then(res=>{
+            if (res.code==200){
+              this.userData = res.data
+            }
+          }).catch(error=>{
+
+          })
+
+        }
 
   }
+
+
+}
 </script>
 
 <style scoped>

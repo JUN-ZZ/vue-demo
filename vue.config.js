@@ -36,24 +36,24 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    before: require('./mock/mock-server.js')
-    // proxy: {
-    //   // '/crf_file': {
-    //   //   target: `http://192.168.2.176:80`,
-    //   //   // target: `http://192.168.2.176:5050`,
-    //   //   changeOrigin: true,
-    //   //   ws: false
-    //   // },
-    //   // detail: https://cli.vuejs.org/config/#devserver-proxy
-    //   // [process.env.VUE_APP_BASE_API]: {
-    //   //   target: `http://192.168.2.147:5090`,
-    //   //   changeOrigin: true,
-    //   //   pathRewrite: {
-    //   //     ['^' + process.env.VUE_APP_BASE_API]: ''
-    //   //   },
-    //   //   ws: false
-    //   // }
-    // }
+    // before: require('./mock/mock-server.js')
+    proxy: {
+      // '/crf_file': {
+      //   target: `http://192.168.2.176:80`,
+      //   // target: `http://192.168.2.176:5050`,
+      //   changeOrigin: true,
+      //   ws: false
+      // },
+      // detail: https://cli.vuejs.org/config/#devserver-proxy
+      [process.env.VUE_APP_BASE_API]: {
+        target: `http://192.168.2.109:5090`,
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: ''
+        },
+        ws: false
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that

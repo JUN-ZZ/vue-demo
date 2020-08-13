@@ -3,11 +3,11 @@
     <el-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
-      :current-page="currentPage"
+      :current-page="page_num"
       :page-sizes="pageSizes"
-      :page-size="pageSize"
+      :page-size="limit"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="total">
+      :total="totalCount">
     </el-pagination>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
       default: 0
     },
     pageSizes:{
-      default: [1, 20, 30, 40]
+      default:() => [10, 20, 30, 40]
     },
     pageSize: {
       default: 10
@@ -33,19 +33,27 @@ export default {
     }
 
   },
+  computed: {
+    page_num(){
+      return this.currentPage
+    },
+    limit(){
+      return this.pageSize
+    },
+    totalCount(){
+      return this.total
+    }
+  },
   data(){
     return {
-
     }
   },
   methods: {
     handleSizeChange(val) {
-      this.pageSize = val
-      this.$emit('pagination', {currentPage:this.currentPage,limit:this.pageSize})
+      this.$emit('pagination', {currentPage:this.page_num,limit:val})
     },
     handleCurrentChange(val) {
-      this.currentPage = val
-      this.$emit('pagination',{currentPage:this.currentPage,limit:this.pageSize})
+      this.$emit('pagination',{currentPage:val,limit:this.limit})
       console.log(`当前页: ${val}`);
       console.log(`pageSize: ${this.pageSize}`);
     }

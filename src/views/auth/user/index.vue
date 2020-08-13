@@ -1,7 +1,6 @@
 <template>
     <div>
-      <h2>用户列表</h2>
-      <br>
+      <pageHeader title="用户列表"> </pageHeader>
       <el-table
         :data="userData"
         border
@@ -44,17 +43,18 @@
 
 <script>
 
-import {getUserList} from "@/api/user"
+import { getUserList } from "@/api/user"
 import pagination from '@/components/Pagination/index'
+import pageHeader from '@/components/PageHeader/index'
 
 export default {
     name: "index",
-    components: { pagination },
+    components: { pagination,pageHeader },
     data() {
         return {
           userData: [],
           params: {
-            limit:1,
+            limit:10,
             page_num:1
           },
           total:0

@@ -4,7 +4,7 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page="page_num"
-      :page-sizes="pageSizes"
+      :page-sizes="pageSizesCount"
       :page-size="limit"
       layout="total, sizes, prev, pager, next, jumper"
       :total="totalCount">
@@ -42,7 +42,11 @@ export default {
     },
     totalCount(){
       return this.total
+    },
+    pageSizesCount(){
+      return this.pageSizes
     }
+
   },
   data(){
     return {

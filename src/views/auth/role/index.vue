@@ -1,15 +1,29 @@
 <template>
     <div>
-
-      角色管理
+      <pageHeader title="角色管理"></pageHeader>
 
     </div>
 </template>
 
 <script>
-    export default {
-        name: "index"
+
+import pageHeader from '@/components/PageHeader/index'
+
+export default {
+    name: "index",
+    components: {
+      pageHeader
+    },
+    data(){
+      return {
+
+      }
+    },
+    methods: {
+
     }
+
+}
 </script>
 
 <style scoped>
